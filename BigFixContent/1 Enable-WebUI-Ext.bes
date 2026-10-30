@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BES xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="BES.xsd">
+	<Task>
+		<Title>Set "_WebUIAppEnv_ENABLE_EXTENSIONS_MANAGEMENT" to "1" - Universal</Title>
+		<Description><![CDATA[<P>This task will enable custom&nbsp;WebUI extensions.</P>]]></Description>
+		<Relevance>exists webui service</Relevance>
+		<Relevance><![CDATA[version of registration server >= "10.0.8"]]></Relevance>
+		<Relevance><![CDATA[version of client >= "10.0.8"]]></Relevance>
+		<Relevance>not exists settings "_WebUIAppEnv_ENABLE_EXTENSIONS_MANAGEMENT" whose("1" = value of it) of client</Relevance>
+		<Category>Configuration: Client Settings</Category>
+		<DownloadSize>0</DownloadSize>
+		<Source>Custom Dashboard - Client Settings Manager</Source>
+		<SourceID>jgstew</SourceID>
+		<SourceReleaseDate>2026-10-30</SourceReleaseDate>
+		<SourceSeverity></SourceSeverity>
+		<CVENames></CVENames>
+		<SANSID></SANSID>
+		<MIMEField>
+			<Name>x-fixlet-modification-time</Name>
+			<Value>Fri, 30 Oct 2026 22:15:23 +0000</Value>
+		</MIMEField>
+		<Domain>BESC</Domain>
+		<DefaultAction ID="Action1">
+			<Description>
+				<PreLink>Click </PreLink>
+				<Link>here</Link>
+				<PostLink> to set the Client Setting</PostLink>
+			</Description>
+			<ActionScript MIMEType="application/x-Fixlet-Windows-Shell">
+setting "_WebUIAppEnv_ENABLE_EXTENSIONS_MANAGEMENT"="1" on "{ parameter "action issue date" of action}" for client
+</ActionScript>
+			<SuccessCriteria Option="OriginalRelevance"></SuccessCriteria>
+		</DefaultAction>
+	</Task>
+</BES>
